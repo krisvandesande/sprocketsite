@@ -24,4 +24,10 @@
 			"binding": "LOADER",
 		},
 	],
+	"routes": [
+		{
+			"pattern": "sprocketexif.app/*",
+			"zone_name": "sprocketexif.app"
+		}
+	],
 }
