@@ -27,5 +27,6 @@
 		"@astrojs/check": "^0.9.7",
 		"@cloudflare/workers-types": "^4.20260305.1",
 		"wrangler": "^4.80.0"
-	}
+	},
+	"packageManager": "pnpm@11.6.0"
 }
