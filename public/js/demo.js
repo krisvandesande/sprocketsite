@@ -23,13 +23,13 @@
 
   const lens = (make, name, short, long, ap) => ({ make, name, short, long, ap });
   const KITS = [
-    { make: 'Leica', model: 'M3', speeds: series(OLD, 1, 1/1000), bulb: true, lenses: [
+    { make: 'Leica', model: 'M3', serial: '918304', speeds: series(OLD, 1, 1/1000), bulb: true, lenses: [
       lens('Leica', 'Summicron-M 50mm f/2', 50, 50, 2), lens('Leica', 'Elmarit-M 90mm f/2.8', 90, 90, 2.8), lens('Leica', 'Summaron-M 35mm f/2.8', 35, 35, 2.8)] },
-    { make: 'Nikon', model: 'F3', speeds: series(MODERN, 8, 1/2000), bulb: true, lenses: [
+    { make: 'Nikon', model: 'F3', serial: '1623487', speeds: series(MODERN, 8, 1/2000), bulb: true, lenses: [
       lens('Nikon', 'Nikkor 50mm f/1.4', 50, 50, 1.4), lens('Nikon', 'Nikkor 35-70mm f/3.5', 35, 70, 3.5), lens('Nikon', 'Nikkor 105mm f/2.5', 105, 105, 2.5)] },
-    { make: 'Hasselblad', model: '500C/M', speeds: series(MODERN, 1, 1/500), bulb: true, lenses: [
+    { make: 'Hasselblad', model: '500C/M', serial: '16TE 14523', speeds: series(MODERN, 1, 1/500), bulb: true, lenses: [
       lens('Carl Zeiss', 'Planar 80mm f/2.8', 80, 80, 2.8), lens('Carl Zeiss', 'Distagon 50mm f/4', 50, 50, 4), lens('Carl Zeiss', 'Sonnar 150mm f/4', 150, 150, 4)] },
-    { make: 'Rolleiflex', model: '2.8F', speeds: series(MODERN, 1, 1/500), bulb: true, lenses: [lens('Carl Zeiss', 'Planar 80mm f/2.8', 80, 80, 2.8)] },
+    { make: 'Rolleiflex', model: '2.8F', serial: '2481937', speeds: series(MODERN, 1, 1/500), bulb: true, lenses: [lens('Carl Zeiss', 'Planar 80mm f/2.8', 80, 80, 2.8)] },
     { make: 'Kodak', model: 'Brownie Hawkeye', speeds: [1/50], bulb: true, lenses: [lens('Kodak', 'Meniscus 80mm f/15', 80, 80, 15)] },
   ];
   const FILMS = [['Kodak Portra 400', 400], ['Kodak Tri-X 400', 400], ['Ilford HP5 Plus', 400], ['Kodak Ektar 100', 100], ['Fujifilm Velvia 50', 50]];
@@ -247,7 +247,7 @@
   });
 
   const camera = $('#camera'), filmPick = $('#film');
-  camera.innerHTML = KITS.map((k, i) => `<option value="${i}">${esc(`${k.make} ${k.model}`)}</option>`).join('');
+  camera.innerHTML = KITS.map((k, i) => `<option value="${i}">${esc(`${k.make} ${k.model}${k.serial ? `  ·  No. ${k.serial}` : ''}`)}</option>`).join('');   // serials are made up; like the app, they stay in the library and out of the file
   filmPick.innerHTML = FILMS.map((f, i) => `<option value="${i}">${esc(f[0])}</option>`).join('');
   camera.addEventListener('change', () => { kit = KITS[Number(camera.value)]; applyKit(); say(`${kit.make} ${kit.model} chosen. The lists now follow its lenses and shutter.`); draw(); });
   filmPick.addEventListener('change', () => { film = FILMS[Number(filmPick.value)]; touched(); draw(); });
