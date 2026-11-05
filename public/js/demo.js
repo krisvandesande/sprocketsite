@@ -15,7 +15,6 @@
   // ── The kit: a few of the app's catalogue entries ──
 
   const MODERN = [30, 15, 8, 4, 2, 1, 1/2, 1/4, 1/8, 1/15, 1/30, 1/60, 1/125, 1/250, 1/500, 1/1000, 1/2000, 1/4000, 1/8000];
-  const OLD = [1, 1/2, 1/5, 1/10, 1/25, 1/50, 1/100, 1/250, 1/500, 1/1000];
   const same = (a, b) => Math.abs(a - b) <= Math.max(a, b) * 0.002;
   const series = (table, slow, fast) => table.filter(s => s <= slow * 1.002 && s >= fast * 0.998);
   const APERTURES = [0.95, 1, 1.2, 1.4, 1.5, 1.7, 1.8, 2, 2.4, 2.5, 2.8, 3.2, 3.5, 3.8, 4, 4.5, 4.8, 5.6, 6.3, 6.8, 8, 9, 11, 16, 22];
@@ -23,7 +22,7 @@
 
   const lens = (make, name, short, long, ap) => ({ make, name, short, long, ap });
   const KITS = [
-    { make: 'Leica', model: 'M3', serial: '918304', speeds: series(OLD, 1, 1/1000), bulb: true, lenses: [
+    { make: 'Leica', model: 'M3', serial: '918304', speeds: series(MODERN, 1, 1/1000), bulb: true, lenses: [
       lens('Leica', 'Summicron-M 50mm f/2', 50, 50, 2), lens('Leica', 'Elmarit-M 90mm f/2.8', 90, 90, 2.8), lens('Leica', 'Summaron-M 35mm f/2.8', 35, 35, 2.8)] },
     { make: 'Nikon', model: 'F3', serial: '1623487', speeds: series(MODERN, 8, 1/2000), bulb: true, lenses: [
       lens('Nikon', 'Nikkor 50mm f/1.4', 50, 50, 1.4), lens('Nikon', 'Nikkor 35-70mm f/3.5', 35, 70, 3.5), lens('Nikon', 'Nikkor 105mm f/2.5', 105, 105, 2.5)] },
