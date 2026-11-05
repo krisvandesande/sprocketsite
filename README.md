@@ -1,6 +1,6 @@
 # sprocketexif.app
 
-The one-pager for Sprocket EXIF Editor: static files in `public/`, served from Cloudflare Workers
+The one-pager for Sprocket EXIF: static files in `public/`, served from Cloudflare Workers
 static assets. Same set-up as chester.kvds.media. The app's source is a separate repo.
 
 ```sh
