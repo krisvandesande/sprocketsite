@@ -30,7 +30,7 @@
     { make: 'Hasselblad', model: '500C/M', serial: '16TE 14523', speeds: series(MODERN, 1, 1/500), bulb: true, lenses: [
       lens('Carl Zeiss', 'Planar 80mm f/2.8', 80, 80, 2.8), lens('Carl Zeiss', 'Distagon 50mm f/4', 50, 50, 4), lens('Carl Zeiss', 'Sonnar 150mm f/4', 150, 150, 4)] },
     { make: 'Franke & Heidecke', model: 'Rolleiflex 2.8F', serial: '2481937', speeds: series(MODERN, 1, 1/500), bulb: true, lenses: [lens('Carl Zeiss', 'Planar 80mm f/2.8', 80, 80, 2.8)] },
-    { make: 'Eastman Kodak', model: 'Brownie Hawkeye', speeds: [1/50], bulb: true, lenses: [lens('Kodak', 'Meniscus 80mm f/15', 80, 80, 15)] },
+    { make: 'Eastman Kodak', model: 'No. 2 Brownie Model F', speeds: [1/50], bulb: true, lenses: [lens('Kodak', 'Meniscus 100mm f/11', 100, 100, 11)] },
   ];
   const FILMS = [['Kodak Portra 400', 400], ['Kodak Tri-X 400', 400], ['Ilford HP5 Plus', 400], ['Kodak Ektar 100', 100], ['Fujifilm Velvia 50', 50]];
   const AUTHOR = 'Kris Van de Sande', LAB = 'Local Film Lab';
