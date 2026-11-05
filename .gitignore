@@ -1,5 +1,3 @@
 node_modules
-dist
-.astro
-uploads
-data.db
+.wrangler
+.DS_Store

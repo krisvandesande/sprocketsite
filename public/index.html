@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sprocket EXIF Editor: the metadata your film scans deserve</title>
+<meta name="description" content="Give your film scans the metadata they deserve, the easy way. Sprocket EXIF Editor is the Mac app that lets you correct the metadata from film scans with just a few clicks.">
+<meta name="theme-color" content="#16110e">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="canonical" href="https://www.sprocketexif.app/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.sprocketexif.app/">
+<meta property="og:title" content="Sprocket EXIF Editor">
+<meta property="og:description" content="Give your film scans the metadata they deserve, the easy way.">
+<meta property="og:image" content="https://www.sprocketexif.app/img/icon-512.png">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="roll" id="roll">
+  <div class="rail rail-l" id="railL" aria-hidden="true"></div>
+  <div class="rail rail-r" id="railR" aria-hidden="true"></div>
+  <div class="leak" aria-hidden="true"></div>
+
+  <div class="start" aria-hidden="true">
+    <span>START</span><i></i><span>START</span><i></i><span>START</span><i></i>
+  </div>
+
+  <div class="chapter" id="main">
+    <header class="story story-head">
+      <p class="brand"><img src="/img/icon-512.png" width="48" height="48" alt=""><span>Sprocket EXIF Editor</span></p>
+      <h1>Give your film scans the metadata they deserve, the easy way.</h1>
+      <p class="lede">Sprocket EXIF Editor is the app that easily let you correct the metadata from film scans with just a few clicks.</p>
+      <p class="get">
+        <a class="button" href="https://forms.gle/1J8GoJtaaPfrQBqZA">Join the beta</a>
+        <span>For Mac.<br>Requires macOS 15 or later.</span>
+      </p>
+      <p class="try"><span class="wedge" aria-hidden="true"></span><span id="tryText">Try it: set a shutter speed on frame 2 and watch it flow down the roll.</span></p>
+    </header>
+
+    <aside class="stage" aria-label="Try Sprocket: a sample roll">
+      <div class="win" id="editor">
+        <div class="win-bar">
+          <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+          <strong class="win-title">Sample roll</strong>
+          <span class="win-count" id="count"></span>
+          <button type="button" class="pill prominent" id="save">Save data to photos</button>
+        </div>
+        <div class="kit">
+          <label><span>Camera</span><span class="well"><select id="camera"></select></span></label>
+          <label><span>Film</span><span class="well"><select id="film"></select></span></label>
+        </div>
+        <div class="rows" id="rows" tabindex="-1"></div>
+      </div>
+      <p class="stage-note">A working copy of the editor, with a sample roll. Nothing you do here is saved.</p>
+      <p class="sr" id="live" aria-live="polite"></p>
+    </aside>
+
+    <div class="story story-body">
+      <section>
+        <p>Whether you scan your own film or get them back from the lab, they always miss those essential EXIF data like camera, lens, film and ISO value. Sprocket EXIF Editor aims to fix that. Drag a full digital roll into our app, quickly edit either the basics, or go into expert mode, hit Save and all your photos will show up in order in your Photo Library of choice.</p>
+      </section>
+      <section>
+        <p class="num"><b>01</b> The river</p>
+        <h2>Everything flows down the roll</h2>
+        <p>It&rsquo;s an app that was built with film scanning in mind. We want it to be an intuitive step between scanner and photo management systems. You drop in a folder of scanned film, select the kit you used and hit Let&rsquo;s Go. In our main window you see your entire roll of photos in the &ldquo;river&rdquo;. We call it that because every photo you add information to flows through to the next photo. So the sequence of the roll will never be broken. You can go as detailed or as vague as you want: whether you have to add just a date or have detailled details of every single shot on the roll, we have you.</p>
+      </section>
+      <section>
+        <p class="num"><b>02</b> Your kit</p>
+        <h2>It knows what your camera can do</h2>
+        <p>Pick a camera and the lists follow: the lenses in your kit, the apertures that lens has, the speeds that shutter has. A Hasselblad lens runs from 1 second to 1/500 plus B. A Brownie has one speed, so Sprocket fills it in.</p>
+      </section>
+    </div>
+  </div>
+
+  <div class="gate" aria-hidden="true"></div>
+
+  <section class="contact" aria-label="Frames from a roll">
+    <img src="/img/frames/frame-01.webp" width="900" height="600" alt="Placeholder frame" loading="lazy">
+    <img src="/img/frames/frame-02.webp" width="900" height="600" alt="Placeholder frame" loading="lazy">
+    <img src="/img/frames/frame-03.webp" width="900" height="600" alt="Placeholder frame" loading="lazy">
+    <img src="/img/frames/frame-04.webp" width="900" height="600" alt="Placeholder frame" loading="lazy">
+    <img src="/img/frames/frame-05.webp" width="900" height="600" alt="Placeholder frame" loading="lazy">
+    <img src="/img/frames/frame-06.webp" width="900" height="600" alt="Placeholder frame" loading="lazy">
+  </section>
+
+  <div class="gate" aria-hidden="true"></div>
+
+  <div class="chapter">
+    <div class="story story-head">
+      <p class="num"><b>03</b> The file</p>
+      <h2 class="big">A saved scan reads like a digital original</h2>
+      <p>Hit Save and your scan looks to every other app as if it was shot digitally on your film camera. What the scanner or copy-stand camera left behind goes. Your own keywords, ratings and Lightroom edits stay.</p>
+      <p>TIFF, JPEG, PNG, HEIC, BMP and camera raws, including Hasselblad .fff and .3fr scans. Raws get an XMP sidecar next to the file. The pixels are never touched.</p>
+    </div>
+    <aside class="stage" aria-label="What one sample file holds, before and after saving">
+      <div class="win">
+        <div class="win-bar">
+          <strong class="win-title" id="tagTitle"></strong>
+          <span class="win-count" id="tagState"></span>
+        </div>
+        <div class="tags-wrap"><table class="tags">
+          <thead><tr><th scope="col">Tag</th><th scope="col">In the scan</th><th scope="col" id="tagHead">After Save</th></tr></thead>
+          <tbody id="tags"></tbody>
+        </table></div>
+      </div>
+      <p class="stage-note">Shows the frame you selected in the roll above. Change it there and this follows.</p>
+    </aside>
+  </div>
+
+  <div class="gate" aria-hidden="true"></div>
+
+  <main class="after">
+    <section id="story" class="prose">
+      <p class="num"><b>04</b> Our story</p>
+      <p>Photographer Kris Van de Sande loves shooting film, but hates the hassle it brings. As someone who likes to manage all his photo in the same date-based workflow, film scans always have been the odd-one-out. The lack of EXIF data makes sorting, searching and publishing frustrating. Through a complicated workflow through deprecated apps and Terminal commands, Kris was looking for a solution, and found it with Tech Creative Paul Sprangers.</p>
+      <p>Together they built Sprocket EXIF Editor, an intuitive step between scanner and photo management systems.</p>
+    </section>
+
+    <section id="beta" class="prose">
+      <p class="num"><b>05</b> Beta</p>
+      <p>Love shooting film, but hate digitally sorting all photos? We are building the Mac app for you. We call it Sprocket EXIF Editor, and we need beta testers.</p>
+      <p>We have a great working beta, and now we want to see how it holds up for other photographers, and how we can make it even better. If you are interested in testing, please fill in this form:</p>
+      <p><a class="button" href="https://forms.gle/1J8GoJtaaPfrQBqZA">Join the beta</a></p>
+    </section>
+
+    <section id="privacy" class="prose">
+      <p class="num"><b>06</b> Privacy</p>
+      <p>Sprocket EXIF Editor collects no data. Everything happens on your Mac: no account, no tracking, no internet connection.</p>
+    </section>
+
+    <section id="support" class="prose">
+      <p class="num"><b>07</b> Support</p>
+      <p>Found a bug or have an idea? Email <a href="mailto:contact@kvds.media">contact@kvds.media</a>.</p>
+    </section>
+  </main>
+
+  <img class="burn" src="/img/burn.webp" width="2880" height="420" alt="" loading="lazy">
+</div>
+
+<footer class="footer">
+  <p>&copy; 2026 <a href="https://www.kvds.media">KVdS media bv</a></p>
+  <p><a href="#support">Support</a><a href="#privacy">Privacy</a><a href="#beta">Beta</a></p>
+</footer>
+
+<script src="/js/roll.js" defer></script>
+<script src="/js/demo.js" defer></script>
+</body>
+</html>

@@ -1,67 +1,30 @@
-# EmDash Blog Template (Cloudflare)
+# sprocketexif.app
 
-A clean, minimal blog built with [EmDash](https://github.com/emdash-cms/emdash) and deployed on Cloudflare Workers with D1 and R2.
+The one-pager for Sprocket EXIF Editor: static files in `public/`, served from Cloudflare Workers
+static assets. Same set-up as chester.kvds.media. The app's source is a separate repo.
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/emdash-cms/templates/tree/main/blog-cloudflare)
-
-![Blog template homepage](https://raw.githubusercontent.com/emdash-cms/emdash/main/assets/templates/blog/latest/homepage-light-desktop.jpg)
-
-## What's Included
-
-- Featured post hero on the homepage
-- Post archive with reading time estimates
-- Category and tag archives
-- Full-text search
-- RSS feed
-- SEO metadata and JSON-LD
-- Dark/light mode
-- Forms plugin and webhook notifier
-
-## Pages
-
-| Page | Route |
-|---|---|
-| Homepage | `/` |
-| All posts | `/posts` |
-| Single post | `/posts/:slug` |
-| Category archive | `/category/:slug` |
-| Tag archive | `/tag/:slug` |
-| Search | `/search` |
-| Static pages | `/pages/:slug` |
-| 404 | fallback |
-
-## Screenshots
-
-| | Desktop | Mobile |
-|---|---|---|
-| Light | ![homepage light desktop](https://raw.githubusercontent.com/emdash-cms/emdash/main/assets/templates/blog/latest/homepage-light-desktop.jpg) | ![homepage light mobile](https://raw.githubusercontent.com/emdash-cms/emdash/main/assets/templates/blog/latest/homepage-light-mobile.jpg) |
-| Dark | ![homepage dark desktop](https://raw.githubusercontent.com/emdash-cms/emdash/main/assets/templates/blog/latest/homepage-dark-desktop.jpg) | ![homepage dark mobile](https://raw.githubusercontent.com/emdash-cms/emdash/main/assets/templates/blog/latest/homepage-dark-mobile.jpg) |
-
-## Infrastructure
-
-- **Runtime:** Cloudflare Workers
-- **Database:** D1
-- **Storage:** R2
-- **Framework:** Astro with `@astrojs/cloudflare`
-
-## Local Development
-
-```bash
-pnpm install
-pnpm bootstrap
-pnpm dev
+```sh
+npm install
+npm run dev      # http://localhost:8799
+npm run deploy   # goes live on sprocketexif.app and www.sprocketexif.app
 ```
 
-## Deploying
+- `public/index.html` holds the words. No website copy goes live before Kris has approved it.
+- `public/js/demo.js` is the working copy of the editor. Its cascade follows the app's rules.
+- `public/js/roll.js` draws the film's edge print down both sides of the page.
+- `public/img/frames/frame-01.webp` to `frame-06.webp` are drawn placeholders. Replace them with real
+  frames under the same names (3:2, about 900 x 600, no EXIF, GPS removed).
+- `tools/make-assets.py` draws the grain, dust, burnt tail, icons and placeholders. Run it with
+  `--keep-frames` once real frames are in.
 
-```bash
-pnpm deploy
-```
+## Keeping it in step with the app
 
-Or click the deploy button above to set up the project in your Cloudflare account.
+The page copies the app's look on purpose, and the app's look will change. Every shared value is a
+token at the top of `public/css/site.css`, each with a comment naming the Swift value it mirrors
+(`Views/Setup/WizardType.swift`, `FilmEdgeChrome.swift` in the app's repo). Change it there and the
+whole page follows. Shapes that are drawn rather than set by a token:
 
-## See Also
-
-- [Node.js variant](../blog) -- same template using SQLite and local file storage
-- [All templates](../)
-- [EmDash documentation](https://github.com/emdash-cms/emdash/tree/main/docs)
+- Edge print, wedges and START marks: `public/js/roll.js`, `.rail` and `.start` in the CSS.
+- Grain, dust and the burnt tail: `tools/make-assets.py`.
+- Icon: `tools/app-icon.png`, taken from the built app.
+- The window layout and row fields of the demo: `rowHTML()` in `public/js/demo.js`.
