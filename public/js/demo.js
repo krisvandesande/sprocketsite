@@ -168,7 +168,7 @@
       ['Software', 'NX Studio 1.6', LAB],
       ['Artist', '', AUTHOR],
       ['Flash', '', r.flash ? 'Fired' : 'Did not fire'],
-      ['BodySerialNumber', '6012481', null],
+      ['BodySerialNumber', '6012481', kit.serial ?? null],
       ['MakerNote', '1,204 bytes', null],
     ];
   };
@@ -247,7 +247,7 @@
   });
 
   const camera = $('#camera'), filmPick = $('#film');
-  camera.innerHTML = KITS.map((k, i) => `<option value="${i}">${esc(`${k.make} ${k.model}${k.serial ? `  ·  No. ${k.serial}` : ''}`)}</option>`).join('');   // serials are made up; like the app, they stay in the library and out of the file
+  camera.innerHTML = KITS.map((k, i) => `<option value="${i}">${esc(`${k.make} ${k.model}${k.serial ? `  ·  No. ${k.serial}` : ''}`)}</option>`).join('');   // the serials are made up
   filmPick.innerHTML = FILMS.map((f, i) => `<option value="${i}">${esc(f[0])}</option>`).join('');
   camera.addEventListener('change', () => { kit = KITS[Number(camera.value)]; applyKit(); say(`${kit.make} ${kit.model} chosen. The lists now follow its lenses and shutter.`); draw(); });
   filmPick.addEventListener('change', () => { film = FILMS[Number(filmPick.value)]; touched(); draw(); });
