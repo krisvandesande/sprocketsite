@@ -38,7 +38,7 @@
   const FIRST = new Date(2026, 2, 14, 11, 2, 5).getTime();   // the date the sample files carry
   let kit = KITS[0], film = FILMS[0], selected = 0, saving = false, bulbRow = -1;
   const rows = [0, 1, 2, 3, 4, 5].map(i => ({
-    file: `roll_${String(i + 1).padStart(2, '0')}.tif`, img: `/img/frames/frame-0${i + 1}.webp`,
+    file: `Roll12_${String(i + 1).padStart(2, '0')}.tif`, img: `/img/frames/frame-0${i + 1}.webp`,
     date: FIRST + i * 41000, fileDate: FIRST + i * 41000,
     lens: 0, focal: null, aperture: null, shutter: null,
     flash: false, linked: true, own: new Set(), saved: false,
