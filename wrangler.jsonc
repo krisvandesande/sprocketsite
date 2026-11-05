@@ -12,7 +12,8 @@
   "workers_dev": false,
   "preview_urls": false,
   "routes": [
-    { "pattern": "sprocketexif.app", "custom_domain": true },
-    { "pattern": "www.sprocketexif.app", "custom_domain": true }
+    // Zone routes, not custom domains: the zone's existing DNS records stay as they are.
+    { "pattern": "sprocketexif.app/*", "zone_name": "sprocketexif.app" },
+    { "pattern": "www.sprocketexif.app/*", "zone_name": "sprocketexif.app" }
   ]
 }
